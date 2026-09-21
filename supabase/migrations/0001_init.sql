@@ -147,48 +147,68 @@ alter table public.categories      enable row level security;
 alter table public.site_settings  enable row level security;
 
 -- Public can read published rows --------------------------------------------
-create policy if not exists "public read published products"
+-- Note: PostgreSQL does not support `CREATE POLICY IF NOT EXISTS`; use DROP + CREATE for idempotency.
+drop policy if exists "public read published products" on public.products;
+create policy "public read published products"
   on public.products for select
   using (is_published = true);
 
-create policy if not exists "public read categories"
+drop policy if exists "public read categories"
+  on public.categories;
+create policy "public read categories"
   on public.categories for select
   using (is_published = true);
 
-create policy if not exists "public read site settings"
+drop policy if exists "public read site settings"
+  on public.site_settings;
+create policy "public read site settings"
   on public.site_settings for select
   using (true);
 
 -- Authenticated admins can do everything on these tables --------------------
-create policy if not exists "admin all products"
+drop policy if exists "admin all products"
+  on public.products;
+create policy "admin all products"
   on public.products for all
   using (auth.role() = 'authenticated')
   with check (auth.role() = 'authenticated');
 
-create policy if not exists "admin all categories"
+drop policy if exists "admin all categories"
+  on public.categories;
+create policy "admin all categories"
   on public.categories for all
   using (auth.role() = 'authenticated')
   with check (auth.role() = 'authenticated');
 
-create policy if not exists "admin update site settings"
+drop policy if exists "admin update site settings"
+  on public.site_settings;
+create policy "admin update site settings"
   on public.site_settings for all
   using (auth.role() = 'authenticated')
   with check (auth.role() = 'authenticated');
 
 -- Storage policies ----------------------------------------------------------
-create policy if not exists "public read product images"
+drop policy if exists "public read product images"
+  on storage.objects;
+create policy "public read product images"
   on storage.objects for select
   using (bucket_id = 'product-images');
 
-create policy if not exists "admin upload product images"
+drop policy if exists "admin upload product images"
+  on storage.objects;
+create policy "admin upload product images"
   on storage.objects for insert
   with check (bucket_id = 'product-images' and auth.role() = 'authenticated');
 
-create policy if not exists "admin update product images"
+drop policy if exists "admin update product images"
+  on storage.objects;
+create policy "admin update product images"
   on storage.objects for update
   using (bucket_id = 'product-images' and auth.role() = 'authenticated');
 
-create policy if not exists "admin delete product images"
+drop policy if exists "admin delete product images"
+  on storage.objects;
+create policy "admin delete product images"
   on storage.objects for delete
   using (bucket_id = 'product-images' and auth.role() = 'authenticated');
 

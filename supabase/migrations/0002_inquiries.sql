@@ -20,20 +20,28 @@ create index if not exists inquiries_created_idx
 -- RLS: anonymous visitors may submit (insert only); admins may read/update/delete
 alter table public.inquiries enable row level security;
 
-create policy if not exists "public submit inquiry"
+drop policy if exists "public submit inquiry"
+  on public.inquiries;
+create policy "public submit inquiry"
   on public.inquiries for insert
   with check (true);
 
-create policy if not exists "admin read inquiries"
+drop policy if exists "admin read inquiries"
+  on public.inquiries;
+create policy "admin read inquiries"
   on public.inquiries for select
   using (auth.role() = 'authenticated');
 
-create policy if not exists "admin update inquiries"
+drop policy if exists "admin update inquiries"
+  on public.inquiries;
+create policy "admin update inquiries"
   on public.inquiries for update
   using (auth.role() = 'authenticated')
   with check (auth.role() = 'authenticated');
 
-create policy if not exists "admin delete inquiries"
+drop policy if exists "admin delete inquiries"
+  on public.inquiries;
+create policy "admin delete inquiries"
   on public.inquiries for delete
   using (auth.role() = 'authenticated');
 
