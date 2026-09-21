@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: { locale: string };
-  searchParams: { featured?: string; category?: string };
+  searchParams: { featured?: string; category?: string; q?: string };
 }
 
 export default async function ProductsListPage({ params, searchParams }: PageProps) {
@@ -18,6 +18,8 @@ export default async function ProductsListPage({ params, searchParams }: PagePro
   const dir = isRTL[locale] ? 'rtl' : 'ltr';
   const dict = await getDictionary(locale);
   const supabase = await createClient();
+
+  const q = (searchParams.q || '').trim();
 
   let query = supabase.from('products').select('*').eq('is_published', true);
   if (searchParams.featured === '1') query = query.eq('is_featured', true);
@@ -28,6 +30,13 @@ export default async function ProductsListPage({ params, searchParams }: PagePro
       .eq('slug', searchParams.category)
       .single();
     if (cat) query = query.eq('category_id', cat.id);
+  }
+  if (q) {
+    // Search by SKU / name (zh & en). Strip characters that would break the .or() filter syntax.
+    const safe = q.replace(/[,()]/g, '');
+    query = query.or(
+      `sku.ilike.%${safe}%,name_en.ilike.%${safe}%,name_zh.ilike.%${safe}%`
+    );
   }
   const { data: productsList } = await query.order('sort_order').order('created_at', { ascending: false });
   const { data: cats } = await supabase.from('categories').select('*').eq('is_published', true).order('sort_order');
@@ -40,8 +49,8 @@ export default async function ProductsListPage({ params, searchParams }: PagePro
     return locale === 'zh' ? c.name_zh : c.name_en || c.name_zh;
   }
 
-  const title =
-    searchParams.featured === '1' ? dict.nav.recommendations
+  const title = q ? `“${q}”`
+    : searchParams.featured === '1' ? dict.nav.recommendations
       : searchParams.category ? (roots.find((r) => r.slug === searchParams.category)?.name_zh ?? dict.nav.products)
       : dict.nav.products;
 
