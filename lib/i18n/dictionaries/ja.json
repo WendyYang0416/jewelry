@@ -28,7 +28,10 @@
     "featured_products": "おすすめ商品",
     "view_all": "すべて見る",
     "view_more": "もっと見る",
-    "empty": "まだ商品がありません。"
+    "empty": "まだ商品がありません。",
+    "sort_newest": "新着順",
+    "sort_sku": "SKU順",
+    "sort_name": "名前順"
   },
   "product": {
     "sku": "SKU",

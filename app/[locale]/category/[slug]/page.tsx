@@ -27,13 +27,16 @@ export async function generateMetadata({ params }: { params: { locale: string; s
 
 interface PageProps {
   params: { locale: string; slug: string };
+  searchParams: { sort?: string };
 }
 
-export default async function CategoryDirectoryPage({ params }: PageProps) {
+export default async function CategoryDirectoryPage({ params, searchParams }: PageProps) {
   const locale = params.locale as Locale;
   const dir = isRTL[locale] ? 'rtl' : 'ltr';
   const dict = await getDictionary(locale);
   const supabase = await createClient();
+
+  const sort = searchParams.sort || 'newest';
 
   const { data: catRow } = await supabase
     .from('categories')
@@ -45,15 +48,14 @@ export default async function CategoryDirectoryPage({ params }: PageProps) {
   const category = catRow as Category;
 
   // Sub-categories of this root + products directly in this root
+  let pq = supabase.from('products').select('*').eq('category_id', category.id).eq('is_published', true);
+  if (sort === 'sku') pq = pq.order('sku');
+  else if (sort === 'name') pq = pq.order('name_en');
+  else pq = pq.order('sort_order').order('created_at', { ascending: false });
+
   const [{ data: subs }, { data: products }, { data: settingsRow }] = await Promise.all([
     supabase.from('categories').select('*').eq('parent_id', category.id).eq('is_published', true).order('sort_order'),
-    supabase
-      .from('products')
-      .select('*')
-      .eq('category_id', category.id)
-      .eq('is_published', true)
-      .order('sort_order')
-      .order('created_at', { ascending: false }),
+    pq,
     supabase.from('site_settings').select('*').limit(1),
   ]);
   const settings = settingsRow?.[0] as SiteSettings | undefined;
@@ -117,7 +119,26 @@ export default async function CategoryDirectoryPage({ params }: PageProps) {
 
       {/* Products in this category (root) */}
       <section className="container pb-16">
-        <h2 className="mb-4 text-lg font-bold text-brand-800">{dict.home.featured_products}</h2>
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <h2 className="text-lg font-bold text-brand-800">{dict.home.featured_products}</h2>
+          <div className="flex gap-1.5">
+            {([
+              ['newest', dict.home.sort_newest],
+              ['sku', dict.home.sort_sku],
+              ['name', dict.home.sort_name],
+            ] as const).map(([key, label]) => (
+              <Link
+                key={key}
+                href={`/${locale}/category/${category.slug}?sort=${key}`}
+                className={`rounded-full px-3 py-1 text-xs ${
+                  sort === key ? 'bg-brand-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-brand-50'
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
         {productsList.length === 0 ? (
           <p className="rounded-xl border border-dashed border-gray-300 px-4 py-10 text-center text-sm text-gray-400">
             {dict.home.empty}

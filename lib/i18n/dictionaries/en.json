@@ -28,7 +28,10 @@
     "featured_products": "Featured Products",
     "view_all": "View all",
     "view_more": "View more",
-    "empty": "No products yet."
+    "empty": "No products yet.",
+    "sort_newest": "Latest",
+    "sort_sku": "SKU A–Z",
+    "sort_name": "Name A–Z"
   },
   "product": {
     "sku": "SKU",

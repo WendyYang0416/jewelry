@@ -28,7 +28,10 @@
     "featured_products": "추천 상품",
     "view_all": "전체 보기",
     "view_more": "더 보기",
-    "empty": "아직 상품이 없습니다."
+    "empty": "아직 상품이 없습니다.",
+    "sort_newest": "최신순",
+    "sort_sku": "SKU순",
+    "sort_name": "이름순"
   },
   "product": {
     "sku": "SKU",

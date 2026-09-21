@@ -11,13 +11,16 @@ export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: { locale: string; slug: string; child: string };
+  searchParams: { sort?: string };
 }
 
-export default async function SubCategoryPage({ params }: PageProps) {
+export default async function SubCategoryPage({ params, searchParams }: PageProps) {
   const locale = params.locale as Locale;
   const dir = isRTL[locale] ? 'rtl' : 'ltr';
   const dict = await getDictionary(locale);
   const supabase = await createClient();
+
+  const sort = searchParams.sort || 'newest';
 
   const [{ data: parentRow }, { data: childRow }] = await Promise.all([
     supabase.from('categories').select('*').eq('slug', params.slug).eq('is_published', true).single(),
@@ -28,13 +31,11 @@ export default async function SubCategoryPage({ params }: PageProps) {
   const child = childRow as Category;
   if (child.parent_id !== parent.id) notFound();
 
-  const { data: products } = await supabase
-    .from('products')
-    .select('*')
-    .eq('category_id', child.id)
-    .eq('is_published', true)
-    .order('sort_order')
-    .order('created_at', { ascending: false });
+  let pq = supabase.from('products').select('*').eq('category_id', child.id).eq('is_published', true);
+  if (sort === 'sku') pq = pq.order('sku');
+  else if (sort === 'name') pq = pq.order('name_en');
+  else pq = pq.order('sort_order').order('created_at', { ascending: false });
+  const { data: products } = await pq;
   const productsList = (products as Product[]) || [];
 
   function catName(c: Category) {
@@ -57,6 +58,26 @@ export default async function SubCategoryPage({ params }: PageProps) {
       </section>
 
       <section className="container pb-16 pt-8">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <h2 className="text-lg font-bold text-brand-800">{dict.home.featured_products}</h2>
+          <div className="flex gap-1.5">
+            {([
+              ['newest', dict.home.sort_newest],
+              ['sku', dict.home.sort_sku],
+              ['name', dict.home.sort_name],
+            ] as const).map(([key, label]) => (
+              <Link
+                key={key}
+                href={`/${locale}/category/${parent.slug}/${child.slug}?sort=${key}`}
+                className={`rounded-full px-3 py-1 text-xs ${
+                  sort === key ? 'bg-brand-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-brand-50'
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
         {productsList.length === 0 ? (
           <p className="rounded-xl border border-dashed border-gray-300 px-4 py-10 text-center text-sm text-gray-400">
             {dict.home.empty}
