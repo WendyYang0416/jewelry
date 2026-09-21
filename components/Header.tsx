@@ -55,7 +55,7 @@ export default function Header({ locale, settings, t }: Props) {
   );
 
   return (
-    <header dir={dir} className="border-b border-brand-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header dir={dir} className="border-b border-brand-100 bg-white shadow-sm backdrop-blur">
       <div className="container flex items-center justify-between gap-4 py-3">
         {/* Left: company name + intro */}
         <div className="flex flex-col items-start gap-0.5">

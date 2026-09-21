@@ -15,7 +15,6 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createClient } from '@supabase/supabase-js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -57,9 +56,34 @@ if (!usingServiceRole) {
   console.warn('⚠ Using anon key — inserts will fail if RLS is enabled. Prefer SUPABASE_SERVICE_ROLE_KEY.');
 }
 
-const supabase = createClient(URL, KEY, {
-  auth: { autoRefreshToken: false, persistSession: false },
-});
+const headers = {
+  apikey: KEY,
+  Authorization: `Bearer ${KEY}`,
+  'Content-Type': 'application/json',
+};
+
+const supabase = {
+  from(table) {
+    const base = `${URL}/rest/v1/${table}`;
+    return {
+      select: async (cols) => {
+        const res = await fetch(`${base}?select=${encodeURIComponent(cols)}`, { headers });
+        if (!res.ok) throw new Error(`REST ${res.status}: ${await res.text()}`);
+        return { data: await res.json(), error: null };
+      },
+      upsert: async (rows, opts = {}) => {
+        const url = opts.onConflict ? `${base}?on_conflict=${opts.onConflict}` : base;
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { ...headers, Prefer: 'return=representation,resolution=merge-duplicates' },
+          body: JSON.stringify(rows),
+        });
+        if (!res.ok) return { data: null, error: { message: `REST ${res.status}: ${await res.text()}` } };
+        return { data: await res.json(), error: null };
+      },
+    };
+  },
+};
 
 // ---------------------------------------------------------------------------
 // Demo image generator (same host is allow-listed in next.config.mjs)

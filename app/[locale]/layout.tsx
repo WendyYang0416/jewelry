@@ -73,7 +73,7 @@ export default async function LocaleLayout({
           hint={dict.category_hint}
         />
         <main className="flex-1">{children}</main>
-        <footer className="border-t border-brand-100 bg-brand-50/40 py-6 text-center text-xs text-gray-500">
+        <footer className="border-t border-brand-100 bg-gradient-to-b from-white to-brand-50/60 py-8 text-center text-xs text-gray-500">
           <div className="container">
             <p>© {new Date().getFullYear()} {locale === 'zh' ? settings.company_name_zh : settings.company_name_en}. {dict.footer.rights}</p>
             <p className="mt-1 text-[11px]">{dict.footer.made_in} · {localeNames[locale]}</p>

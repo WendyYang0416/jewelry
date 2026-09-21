@@ -33,3 +33,6 @@ next-env.d.ts
 # IDE
 .vscode/
 .idea/
+
+# local scripts with credentials
+scripts/create-admin.mjs

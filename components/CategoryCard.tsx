@@ -19,7 +19,7 @@ export default function CategoryCard({ locale, category }: Props) {
   return (
     <Link
       href={`/${locale}/category/${category.slug}`}
-      className="card-hover group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-2xl border border-brand-100 bg-brand-50"
+      className="card-hover group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-2xl border border-brand-100 bg-brand-50 shadow-sm"
     >
       <Image
         src={category.image_url || placeholder}
@@ -28,8 +28,8 @@ export default function CategoryCard({ locale, category }: Props) {
         sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-center">
-        <span className="text-base font-semibold text-white drop-shadow sm:text-lg">
+      <div className="absolute inset-x-0 bottom-0 bg-white/85 px-2 py-2 text-center backdrop-blur-sm">
+        <span className="text-sm font-semibold text-brand-800 sm:text-base">
           {name(category, locale)}
         </span>
       </div>

@@ -38,7 +38,7 @@ export default function Navbar({ locale, categories, t, hint }: Props) {
   }
 
   return (
-    <nav dir={dir} className="sticky top-0 z-40 border-b border-brand-100 bg-white shadow-sm">
+    <nav dir={dir} className="sticky top-0 z-40 border-b border-brand-100 bg-white shadow-md shadow-brand-500/5">
       <div className="container">
         {/* Mobile row: hamburger + featured link */}
         <div className="flex items-center justify-between md:hidden">

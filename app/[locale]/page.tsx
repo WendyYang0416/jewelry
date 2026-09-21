@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { getDictionary } from '@/lib/i18n/get-dictionary';
 import { createClient } from '@/lib/supabase/server';
@@ -36,8 +37,11 @@ export default async function HomePage({ params }: { params: { locale: string } 
   return (
     <div>
       {/* Hero / banner */}
-      <section className="relative">
-        <div className="container relative flex h-64 flex-col items-start justify-center rounded-b-3xl bg-gradient-to-r from-brand-100 to-gold-light/60 px-6 sm:h-80">
+      <section className="container pt-4">
+        <div className="relative flex h-72 flex-col items-start justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-brand-100 via-white to-gold-light/40 px-8 shadow-sm sm:h-96 sm:px-12">
+          {/* decorative circles */}
+          <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-200/40 blur-2xl" />
+          <div className="pointer-events-none absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-gold-light/30 blur-2xl" />
           {bannerUrl && (
             <Image
               src={bannerUrl}
@@ -45,17 +49,31 @@ export default async function HomePage({ params }: { params: { locale: string } 
               fill
               priority
               sizes="100vw"
-              className="object-cover opacity-30"
+              className="object-cover opacity-25"
             />
           )}
           <div className="relative z-10 max-w-2xl">
-            <h1 className="text-2xl font-bold text-brand-800 sm:text-4xl">
+            <span className="inline-block rounded-full bg-white/70 px-3 py-1 text-xs font-medium text-brand-700 backdrop-blur sm:text-sm">
+              {dict.home.hero_subtitle}
+            </span>
+            <h1 className="mt-3 text-3xl font-extrabold leading-tight text-brand-800 sm:text-5xl">
               {dict.home.hero_title}
             </h1>
-            <p className="mt-2 text-sm text-brand-700 sm:text-base">
-              {dict.home.hero_subtitle}
-            </p>
-            <p className="mt-3 line-clamp-3 text-xs text-gray-600 sm:text-sm">{heroTitle}</p>
+            <p className="mt-3 line-clamp-3 text-sm text-gray-600 sm:text-base">{heroTitle}</p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link
+                href={`/${locale}/products`}
+                className="rounded-full bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-500/30 transition hover:bg-brand-600"
+              >
+                {dict.home.featured_products}
+              </Link>
+              <Link
+                href={`/${locale}/about`}
+                className="rounded-full border border-brand-200 bg-white/70 px-5 py-2.5 text-sm font-semibold text-brand-700 backdrop-blur transition hover:bg-white"
+              >
+                {dict.header.intro || 'About us'}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -67,7 +85,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
             {dict.home.shop_categories}
           </h2>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-7">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
           {rootCategories.length === 0 ? (
             <p className="col-span-full text-sm text-gray-500">{dict.home.empty}</p>
           ) : (
