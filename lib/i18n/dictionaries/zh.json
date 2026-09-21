@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "介绍",
+    "contact": "联系我们",
+    "products": "产品",
+    "recommendations": "产品推荐",
+    "categories": "产品分类",
+    "admin": "后台管理"
+  },
+  "category_hint": "手机链 · 脚链 · 手链 · 项链 · 戒指 · 耳环 · 胸针 · 腰链",
+  "header": {
+    "company": "义乌忆锦饰品有限公司",
+    "intro": "介绍",
+    "contact": "联系我们",
+    "admin": "后台管理",
+    "whatsapp": "WhatsApp",
+    "wechat": "微信",
+    "email": "邮箱",
+    "copy": "复制",
+    "copied": "已复制"
+  },
+  "home": {
+    "hero_title": "来自义乌的高品质饰品",
+    "hero_subtitle": "支持 OEM / ODM 定制 · 全球发货",
+    "shop_categories": "按品类选购",
+    "featured_products": "产品推荐",
+    "view_all": "查看全部",
+    "view_more": "查看更多",
+    "empty": "暂无产品。"
+  },
+  "product": {
+    "sku": "产品编号",
+    "colors": "色系",
+    "box_quantity": "箱规 (PCS)",
+    "weight": "重量 (g)",
+    "cbm": "体积 (m³)",
+    "category": "所属分类"
+  },
+  "footer": {
+    "rights": "版权所有。",
+    "made_in": "中国义乌制造"
+  },
+  "admin": {
+    "title": "后台管理",
+    "login": "登录",
+    "email": "邮箱",
+    "password": "密码",
+    "sign_out": "退出登录",
+    "dashboard": "仪表盘",
+    "products": "产品管理",
+    "categories": "分类管理",
+    "settings": "网站设置",
+    "new_product": "新增产品",
+    "edit_product": "编辑产品",
+    "product_list": "产品列表",
+    "search": "按编号或名称搜索",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "publish": "上架",
+    "unpublish": "下架",
+    "feature": "推荐",
+    "unfeature": "取消推荐"
+  },
+  "form": {
+    "sku": "产品编号 (SKU)",
+    "sku_help": "唯一标识，例如 YL-NC-001",
+    "name": "产品名称",
+    "description": "产品描述",
+    "colors": "同产品色系",
+    "colors_help": "可多选或自定义",
+    "custom_color": "自定义颜色",
+    "add_color": "添加",
+    "box_quantity": "箱规 (单位 PCS)",
+    "weight_g": "重量 (单位 g)",
+    "cbm": "CBM (立方米)",
+    "category": "所属分类",
+    "subcategory": "子分类",
+    "images": "产品图片",
+    "images_help": "支持多图上传，第一张为封面图。",
+    "upload": "上传",
+    "featured": "首页推荐",
+    "published": "上架（前台可见）",
+    "submit": "保存产品",
+    "updating": "保存中…"
+  },
+  "color": {
+    "gold": "金色",
+    "silver": "银色",
+    "rose_gold": "玫瑰金",
+    "black": "黑色",
+    "white": "白色",
+    "red": "红色",
+    "blue": "蓝色",
+    "green": "绿色"
+  }
+}

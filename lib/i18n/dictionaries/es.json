@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "products": "Productos",
+    "recommendations": "Destacados",
+    "categories": "Categorías",
+    "admin": "Admin"
+  },
+  "category_hint": "Colgante para móvil · Trenza · Pulsera · Collar · Anillo · Pendiente · Broche",
+  "header": {
+    "company": "Yiwu Yiling Accessories Co., Ltd.",
+    "intro": "Nosotros",
+    "contact": "Contáctenos",
+    "admin": "Administración",
+    "whatsapp": "WhatsApp",
+    "wechat": "WeChat",
+    "email": "Correo",
+    "copy": "Copiar",
+    "copied": "Copiado"
+  },
+  "home": {
+    "hero_title": "Accesorios premium desde Yiwu",
+    "hero_subtitle": "OEM / ODM bienvenidos · Envío mundial",
+    "shop_categories": "Comprar por categoría",
+    "featured_products": "Productos destacados",
+    "view_all": "Ver todo",
+    "view_more": "Ver más",
+    "empty": "Aún no hay productos."
+  },
+  "product": {
+    "sku": "SKU",
+    "colors": "Colores",
+    "box_quantity": "Cant. por caja (PCS)",
+    "weight": "Peso (g)",
+    "cbm": "Volumen (m³)",
+    "category": "Categoría"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "made_in": "Hecho en Yiwu, China"
+  },
+  "admin": {
+    "title": "Panel de administración",
+    "login": "Iniciar sesión",
+    "email": "Correo",
+    "password": "Contraseña",
+    "sign_out": "Cerrar sesión",
+    "dashboard": "Inicio",
+    "products": "Productos",
+    "categories": "Categorías",
+    "settings": "Ajustes",
+    "new_product": "Nuevo producto",
+    "edit_product": "Editar producto",
+    "product_list": "Lista de productos",
+    "search": "Buscar por SKU o nombre",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "publish": "Publicar",
+    "unpublish": "Ocultar",
+    "feature": "Destacar",
+    "unfeature": "Quitar destacado"
+  },
+  "form": {
+    "sku": "SKU del producto",
+    "sku_help": "Identificador único, p. ej. YL-NC-001",
+    "name": "Nombre del producto",
+    "description": "Descripción",
+    "colors": "Serie de colores",
+    "colors_help": "Seleccione uno o más, o escriba uno personalizado",
+    "custom_color": "Color personalizado",
+    "add_color": "Añadir",
+    "box_quantity": "Cantidad por caja (PCS)",
+    "weight_g": "Peso (g)",
+    "cbm": "Volumen (m³)",
+    "category": "Categoría",
+    "subcategory": "Subcategoría",
+    "images": "Imágenes del producto",
+    "images_help": "Sube varias imágenes. La primera es la portada.",
+    "upload": "Subir",
+    "featured": "Destacar en la página principal",
+    "published": "Publicado (visible en el sitio)",
+    "submit": "Guardar producto",
+    "updating": "Guardando…"
+  },
+  "color": {
+    "gold": "Dorado",
+    "silver": "Plateado",
+    "rose_gold": "Oro rosa",
+    "black": "Negro",
+    "white": "Blanco",
+    "red": "Rojo",
+    "blue": "Azul",
+    "green": "Verde"
+  }
+}

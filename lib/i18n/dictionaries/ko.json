@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "홈",
+    "about": "소개",
+    "contact": "문의",
+    "products": "제품",
+    "recommendations": "추천",
+    "categories": "카테고리",
+    "admin": "관리"
+  },
+  "category_hint": "폰 참 · 발찌 · 팔찌 · 목걸이 · 반지 · 귀걸이 · 브로치",
+  "header": {
+    "company": "이우 이일링 액세서리 유한공사",
+    "intro": "소개",
+    "contact": "문의하기",
+    "admin": "관리자",
+    "whatsapp": "WhatsApp",
+    "wechat": "WeChat",
+    "email": "이메일",
+    "copy": "복사",
+    "copied": "복사됨"
+  },
+  "home": {
+    "hero_title": "이우에서 온 프리미엄 액세서리",
+    "hero_subtitle": "OEM / ODM 환영 · 전 세계 배송",
+    "shop_categories": "카테고리별 쇼핑",
+    "featured_products": "추천 상품",
+    "view_all": "전체 보기",
+    "view_more": "더 보기",
+    "empty": "아직 상품이 없습니다."
+  },
+  "product": {
+    "sku": "SKU",
+    "colors": "컬러",
+    "box_quantity": "박스 수량 (PCS)",
+    "weight": "무게 (g)",
+    "cbm": "부피 (m³)",
+    "category": "카테고리"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "made_in": "Made in Yiwu, China"
+  },
+  "admin": {
+    "title": "관리 패널",
+    "login": "로그인",
+    "email": "이메일",
+    "password": "비밀번호",
+    "sign_out": "로그아웃",
+    "dashboard": "대시보드",
+    "products": "상품",
+    "categories": "카테고리",
+    "settings": "설정",
+    "new_product": "신규 상품",
+    "edit_product": "상품 편집",
+    "product_list": "상품 목록",
+    "search": "SKU 또는 이름으로 검색",
+    "save": "저장",
+    "cancel": "취소",
+    "delete": "삭제",
+    "publish": "게시",
+    "unpublish": "비게시",
+    "feature": "추천 설정",
+    "unfeature": "추천 해제"
+  },
+  "form": {
+    "sku": "상품 SKU",
+    "sku_help": "고유 식별자 (예: YL-NC-001)",
+    "name": "상품명",
+    "description": "설명",
+    "colors": "컬러 시리즈",
+    "colors_help": "하나 이상 선택하거나 사용자 정의 값을 입력하세요",
+    "custom_color": "사용자 정의 컬러",
+    "add_color": "추가",
+    "box_quantity": "박스 수량 (PCS)",
+    "weight_g": "무게 (g)",
+    "cbm": "부피 (m³)",
+    "category": "카테고리",
+    "subcategory": "하위 카테고리",
+    "images": "상품 이미지",
+    "images_help": "여러 이미지를 업로드하세요. 첫 번째 이미지가 표지입니다.",
+    "upload": "업로드",
+    "featured": "홈페이지에 추천 표시",
+    "published": "게시됨 (사이트에 표시)",
+    "submit": "상품 저장",
+    "updating": "저장 중…"
+  },
+  "color": {
+    "gold": "골드",
+    "silver": "실버",
+    "rose_gold": "로즈 골드",
+    "black": "블랙",
+    "white": "화이트",
+    "red": "레드",
+    "blue": "블루",
+    "green": "그린"
+  }
+}

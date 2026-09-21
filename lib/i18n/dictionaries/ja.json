@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "contact": "お問い合わせ",
+    "products": "製品",
+    "recommendations": "おすすめ",
+    "categories": "カテゴリー",
+    "admin": "管理"
+  },
+  "category_hint": "ストラップ · アンクレット · ブレスレット · ネックレス · リング · ピアス · ブローチ",
+  "header": {
+    "company": "義烏憶錦飾品有限公司",
+    "intro": "会社概要",
+    "contact": "お問い合わせ",
+    "admin": "管理画面",
+    "whatsapp": "WhatsApp",
+    "wechat": "WeChat",
+    "email": "メール",
+    "copy": "コピー",
+    "copied": "コピーしました"
+  },
+  "home": {
+    "hero_title": "義烏発プレミアム・アクセサリー",
+    "hero_subtitle": "OEM / ODM 歓迎 · 世界中へ発送",
+    "shop_categories": "カテゴリーから選ぶ",
+    "featured_products": "おすすめ商品",
+    "view_all": "すべて見る",
+    "view_more": "もっと見る",
+    "empty": "まだ商品がありません。"
+  },
+  "product": {
+    "sku": "SKU",
+    "colors": "カラー",
+    "box_quantity": "箱入数 (PCS)",
+    "weight": "重量 (g)",
+    "cbm": "容積 (m³)",
+    "category": "カテゴリー"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "made_in": "Made in Yiwu, China"
+  },
+  "admin": {
+    "title": "管理パネル",
+    "login": "ログイン",
+    "email": "メール",
+    "password": "パスワード",
+    "sign_out": "ログアウト",
+    "dashboard": "ダッシュボード",
+    "products": "商品",
+    "categories": "カテゴリー",
+    "settings": "設定",
+    "new_product": "新規商品",
+    "edit_product": "商品編集",
+    "product_list": "商品一覧",
+    "search": "SKUまたは商品名で検索",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "publish": "公開",
+    "unpublish": "非公開",
+    "feature": "おすすめに設定",
+    "unfeature": "おすすめ解除"
+  },
+  "form": {
+    "sku": "商品SKU",
+    "sku_help": "一意の識別子（例: YL-NC-001）",
+    "name": "商品名",
+    "description": "説明",
+    "colors": "カラーシリーズ",
+    "colors_help": "1つ以上を選択、またはカスタム値を入力",
+    "custom_color": "カスタムカラー",
+    "add_color": "追加",
+    "box_quantity": "箱入数 (PCS)",
+    "weight_g": "重量 (g)",
+    "cbm": "容積 (m³)",
+    "category": "カテゴリー",
+    "subcategory": "サブカテゴリー",
+    "images": "商品画像",
+    "images_help": "複数アップロード可能。最初の画像が表紙になります。",
+    "upload": "アップロード",
+    "featured": "ホームページのおすすめに表示",
+    "published": "公開（サイトに表示）",
+    "submit": "商品を保存",
+    "updating": "保存中…"
+  },
+  "color": {
+    "gold": "ゴールド",
+    "silver": "シルバー",
+    "rose_gold": "ローズゴールド",
+    "black": "ブラック",
+    "white": "ホワイト",
+    "red": "レッド",
+    "blue": "ブルー",
+    "green": "グリーン"
+  }
+}

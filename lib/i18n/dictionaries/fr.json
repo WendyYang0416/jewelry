@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "products": "Produits",
+    "recommendations": "En vedette",
+    "categories": "Catégories",
+    "admin": "Admin"
+  },
+  "category_hint": "Breloque téléphone · Cheville · Bracelet · Collier · Bague · Boucle d'oreille · Broche",
+  "header": {
+    "company": "Yiwu Yiling Accessories Co., Ltd.",
+    "intro": "À propos",
+    "contact": "Nous contacter",
+    "admin": "Administration",
+    "whatsapp": "WhatsApp",
+    "wechat": "WeChat",
+    "email": "E-mail",
+    "copy": "Copier",
+    "copied": "Copié"
+  },
+  "home": {
+    "hero_title": "Accessoires haut de gamme depuis Yiwu",
+    "hero_subtitle": "OEM / ODM bienvenus · Livraison mondiale",
+    "shop_categories": "Acheter par catégorie",
+    "featured_products": "Produits en vedette",
+    "view_all": "Voir tout",
+    "view_more": "Voir plus",
+    "empty": "Aucun produit pour le moment."
+  },
+  "product": {
+    "sku": "SKU",
+    "colors": "Couleurs",
+    "box_quantity": "Qté par carton (PCS)",
+    "weight": "Poids (g)",
+    "cbm": "Volume (m³)",
+    "category": "Catégorie"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "made_in": "Fabriqué à Yiwu, Chine"
+  },
+  "admin": {
+    "title": "Panneau d'administration",
+    "login": "Connexion",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "sign_out": "Déconnexion",
+    "dashboard": "Tableau de bord",
+    "products": "Produits",
+    "categories": "Catégories",
+    "settings": "Paramètres",
+    "new_product": "Nouveau produit",
+    "edit_product": "Modifier le produit",
+    "product_list": "Liste des produits",
+    "search": "Rechercher par SKU ou nom",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "publish": "Publier",
+    "unpublish": "Dépublier",
+    "feature": "Mettre en vedette",
+    "unfeature": "Retirer la vedette"
+  },
+  "form": {
+    "sku": "SKU du produit",
+    "sku_help": "Identifiant unique, ex. YL-NC-001",
+    "name": "Nom du produit",
+    "description": "Description",
+    "colors": "Série de couleurs",
+    "colors_help": "Sélectionnez une ou plusieurs, ou saisissez une valeur personnalisée",
+    "custom_color": "Couleur personnalisée",
+    "add_color": "Ajouter",
+    "box_quantity": "Quantité par carton (PCS)",
+    "weight_g": "Poids (g)",
+    "cbm": "Volume (m³)",
+    "category": "Catégorie",
+    "subcategory": "Sous-catégorie",
+    "images": "Images du produit",
+    "images_help": "Téléversez plusieurs images. La première est la couverture.",
+    "upload": "Téléverser",
+    "featured": "En vedette sur la page d'accueil",
+    "published": "Publié (visible sur le site)",
+    "submit": "Enregistrer le produit",
+    "updating": "Enregistrement…"
+  },
+  "color": {
+    "gold": "Or",
+    "silver": "Argent",
+    "rose_gold": "Or rose",
+    "black": "Noir",
+    "white": "Blanc",
+    "red": "Rouge",
+    "blue": "Bleu",
+    "green": "Vert"
+  }
+}

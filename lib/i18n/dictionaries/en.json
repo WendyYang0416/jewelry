@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "products": "Products",
+    "recommendations": "Featured",
+    "categories": "Categories",
+    "admin": "Admin"
+  },
+  "category_hint": "Phone charm · Anklet · Bracelet · Necklace · Ring · Earring · Brooch",
+  "header": {
+    "company": "Yiwu Yiling Accessories Co., Ltd.",
+    "intro": "About",
+    "contact": "Contact us",
+    "admin": "Admin",
+    "whatsapp": "WhatsApp",
+    "wechat": "WeChat",
+    "email": "Email",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "home": {
+    "hero_title": "Premium Accessories from Yiwu",
+    "hero_subtitle": "OEM / ODM welcomed · Worldwide shipping",
+    "shop_categories": "Shop by Category",
+    "featured_products": "Featured Products",
+    "view_all": "View all",
+    "view_more": "View more",
+    "empty": "No products yet."
+  },
+  "product": {
+    "sku": "SKU",
+    "colors": "Colors",
+    "box_quantity": "Box Qty (PCS)",
+    "weight": "Weight (g)",
+    "cbm": "CBM (m³)",
+    "category": "Category"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "made_in": "Made in Yiwu, China"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "login": "Sign in",
+    "email": "Email",
+    "password": "Password",
+    "sign_out": "Sign out",
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "categories": "Categories",
+    "settings": "Settings",
+    "new_product": "New Product",
+    "edit_product": "Edit Product",
+    "product_list": "Product List",
+    "search": "Search by SKU or name",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "publish": "Publish",
+    "unpublish": "Unpublish",
+    "feature": "Feature",
+    "unfeature": "Unfeature"
+  },
+  "form": {
+    "sku": "Product SKU",
+    "sku_help": "Unique identifier, e.g. YL-NC-001",
+    "name": "Product Name",
+    "description": "Description",
+    "colors": "Color Series",
+    "colors_help": "Select one or more, or type a custom value",
+    "custom_color": "Custom color",
+    "add_color": "Add",
+    "box_quantity": "Box Quantity (PCS)",
+    "weight_g": "Weight (g)",
+    "cbm": "CBM (m³)",
+    "category": "Category",
+    "subcategory": "Subcategory",
+    "images": "Product Images",
+    "images_help": "Upload multiple images. First image is the cover.",
+    "upload": "Upload",
+    "featured": "Featured on home page",
+    "published": "Published (visible on site)",
+    "submit": "Save Product",
+    "updating": "Saving…"
+  },
+  "color": {
+    "gold": "Gold",
+    "silver": "Silver",
+    "rose_gold": "Rose Gold",
+    "black": "Black",
+    "white": "White",
+    "red": "Red",
+    "blue": "Blue",
+    "green": "Green"
+  }
+}
