@@ -37,6 +37,16 @@
     "cbm": "부피 (m³)",
     "category": "카테고리"
   },
+  "inquiry": {
+    "title": "문의 보내기",
+    "name": "성함",
+    "contact": "이메일 또는 WhatsApp",
+    "message": "메시지",
+    "submit": "보내기",
+    "sending": "전송 중…",
+    "success": "전송되었습니다! 곧 회신드리겠습니다.",
+    "error": "전송 실패. 다시 시도해 주세요."
+  },
   "footer": {
     "rights": "All rights reserved.",
     "made_in": "Made in Yiwu, China"

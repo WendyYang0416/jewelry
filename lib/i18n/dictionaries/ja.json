@@ -37,6 +37,16 @@
     "cbm": "容積 (m³)",
     "category": "カテゴリー"
   },
+  "inquiry": {
+    "title": "お問い合わせ",
+    "name": "お名前",
+    "contact": "メールまたはWhatsApp",
+    "message": "メッセージ",
+    "submit": "送信",
+    "sending": "送信中…",
+    "success": "送信しました！まもなく返信します。",
+    "error": "送信に失敗しました。もう一度お試しください。"
+  },
   "footer": {
     "rights": "All rights reserved.",
     "made_in": "Made in Yiwu, China"

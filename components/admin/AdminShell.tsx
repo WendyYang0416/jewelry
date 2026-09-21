@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { FaBox, FaLayerGroup, FaGear, FaRightFromBracket, FaHouse } from 'react-icons/fa6';
+import { FaBox, FaLayerGroup, FaGear, FaRightFromBracket, FaHouse, FaInbox } from 'react-icons/fa6';
 
 interface Props {
   title: string;
-  active: 'dashboard' | 'products' | 'categories' | 'settings';
+  active: 'dashboard' | 'products' | 'categories' | 'settings' | 'inquiries';
   children: React.ReactNode;
 }
 
@@ -11,6 +11,7 @@ export default function AdminShell({ title, active, children }: Props) {
   const nav = [
     { key: 'products', label: 'Products', href: '/admin/products', icon: <FaBox /> },
     { key: 'categories', label: 'Categories', href: '/admin/categories', icon: <FaLayerGroup /> },
+    { key: 'inquiries', label: 'Inquiries', href: '/admin/inquiries', icon: <FaInbox /> },
     { key: 'settings', label: 'Settings', href: '/admin/settings', icon: <FaGear /> },
   ] as const;
 

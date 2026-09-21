@@ -37,6 +37,16 @@
     "cbm": "CBM (m³)",
     "category": "Category"
   },
+  "inquiry": {
+    "title": "Send Inquiry",
+    "name": "Your Name",
+    "contact": "Email or WhatsApp",
+    "message": "Message",
+    "submit": "Send",
+    "sending": "Sending…",
+    "success": "Sent! We will reply soon.",
+    "error": "Failed to send. Please try again."
+  },
   "footer": {
     "rights": "All rights reserved.",
     "made_in": "Made in Yiwu, China"

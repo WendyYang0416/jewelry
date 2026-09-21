@@ -45,6 +45,17 @@ export interface SiteSettings {
   updated_at: string;
 }
 
+export interface Inquiry {
+  id: string;
+  product_id: string | null;
+  sku: string | null;
+  name: string;
+  contact: string;
+  message: string | null;
+  is_read: boolean;
+  created_at: string;
+}
+
 export const DEFAULT_COLORS = [
   'gold', // 金色
   'silver', // 银色

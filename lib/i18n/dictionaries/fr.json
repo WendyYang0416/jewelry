@@ -37,6 +37,16 @@
     "cbm": "Volume (m³)",
     "category": "Catégorie"
   },
+  "inquiry": {
+    "title": "Demande de devis",
+    "name": "Votre nom",
+    "contact": "E-mail ou WhatsApp",
+    "message": "Message",
+    "submit": "Envoyer",
+    "sending": "Envoi…",
+    "success": "Envoyé ! Nous répondrons bientôt.",
+    "error": "Échec de l'envoi. Veuillez réessayer."
+  },
   "footer": {
     "rights": "Tous droits réservés.",
     "made_in": "Fabriqué à Yiwu, Chine"

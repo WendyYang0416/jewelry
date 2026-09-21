@@ -37,6 +37,16 @@
     "cbm": "体积 (m³)",
     "category": "所属分类"
   },
+  "inquiry": {
+    "title": "产品询价",
+    "name": "您的姓名",
+    "contact": "邮箱或 WhatsApp",
+    "message": "留言内容",
+    "submit": "发送",
+    "sending": "发送中…",
+    "success": "已发送！我们会尽快回复。",
+    "error": "发送失败，请稍后再试。"
+  },
   "footer": {
     "rights": "版权所有。",
     "made_in": "中国义乌制造"

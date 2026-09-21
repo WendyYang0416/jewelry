@@ -5,6 +5,7 @@ import { isRTL } from '@/lib/i18n/config';
 import { getDictionary } from '@/lib/i18n/get-dictionary';
 import { createClient } from '@/lib/supabase/server';
 import ProductGallery from '@/components/ProductGallery';
+import InquiryForm from '@/components/InquiryForm';
 import type { Category, Product, SiteSettings } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -106,6 +107,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   Email
                 </a>
               </div>
+
+              {/* Inquiry form (anonymous submission) */}
+              <InquiryForm productId={product.id} sku={product.sku} t={dict.inquiry} />
             </div>
           </div>
         </div>

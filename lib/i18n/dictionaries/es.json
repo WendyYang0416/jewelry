@@ -37,6 +37,16 @@
     "cbm": "Volumen (m³)",
     "category": "Categoría"
   },
+  "inquiry": {
+    "title": "Enviar consulta",
+    "name": "Su nombre",
+    "contact": "Email o WhatsApp",
+    "message": "Mensaje",
+    "submit": "Enviar",
+    "sending": "Enviando…",
+    "success": "¡Enviado! Responderemos pronto.",
+    "error": "Error al enviar. Inténtelo de nuevo."
+  },
   "footer": {
     "rights": "Todos los derechos reservados.",
     "made_in": "Hecho en Yiwu, China"
