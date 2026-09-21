@@ -10,6 +10,21 @@ import type { Category, Product, SiteSettings } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
+export async function generateMetadata({ params }: { params: { locale: string; slug: string } }) {
+  const supabase = await createClient();
+  const { data: cat } = await supabase
+    .from('categories')
+    .select('name_zh, name_en')
+    .eq('slug', params.slug)
+    .eq('is_published', true)
+    .single();
+  if (!cat) return { title: 'Category' };
+  return {
+    title: cat.name_en || cat.name_zh,
+    description: `${cat.name_zh} / ${cat.name_en} — Yiwu Yiling Accessories wholesale catalog.`,
+  };
+}
+
 interface PageProps {
   params: { locale: string; slug: string };
 }

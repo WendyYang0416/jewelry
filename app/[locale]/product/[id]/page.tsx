@@ -10,6 +10,22 @@ import type { Category, Product, SiteSettings } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
+export async function generateMetadata({ params }: { params: { locale: string; id: string } }) {
+  const supabase = await createClient();
+  const { data: prod } = await supabase
+    .from('products')
+    .select('sku, name, description, images')
+    .eq('id', params.id)
+    .eq('is_published', true)
+    .single();
+  if (!prod) return { title: 'Product' };
+  return {
+    title: `${prod.name} (${prod.sku})`,
+    description: prod.description?.slice(0, 160) || `${prod.name} — ${prod.sku} | Yiwu Yiling Accessories`,
+    openGraph: prod.images?.[0] ? { images: [prod.images[0]] } : undefined,
+  };
+}
+
 interface PageProps {
   params: { locale: string; id: string };
 }

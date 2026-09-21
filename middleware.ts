@@ -1,9 +1,11 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { locales, defaultLocale, type Locale } from '@/lib/i18n/config';
 
-// Match all paths except API, _next, static, admin (admin uses own layout)
+// Match all paths except API, _next, static, SEO files, admin (admin uses own layout)
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|admin|images).*)'],
+  matcher: [
+    '/((?!api|_next/static|_next/image|favicon.ico|admin|images|sitemap.xml|robots.txt).*)',
+  ],
 };
 
 export function middleware(request: NextRequest) {
