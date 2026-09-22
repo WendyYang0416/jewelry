@@ -1,6 +1,6 @@
 # Yiwu Yiling Accessories Co., Ltd. — Independent Site
 
-义乌忆锦饰品有限公司独立站。基于 Next.js 14 (App Router) + Supabase + Tailwind CSS，支持 7 国语言，Vercel 一键部署。
+义乌忆翎饰品有限公司独立站。基于 Next.js 14 (App Router) + Supabase + Tailwind CSS，支持 7 国语言，Vercel 一键部署。
 
 Live demo: deploy this repo to Vercel and visit `https://<your-project>.vercel.app`.
 

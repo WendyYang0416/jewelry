@@ -65,7 +65,7 @@ create index if not exists products_published_idx
 -- ============================================================================
 create table if not exists public.site_settings (
   id              uuid primary key default '00000000-0000-0000-0000-000000000000',
-  company_name_zh text not null default '义乌忆锦饰品有限公司',
+  company_name_zh text not null default '义乌忆翎饰品有限公司',
   company_name_en text not null default 'Yiwu Yiling Accessories Co., Ltd.',
   intro_zh        text not null default '',
   intro_en       text not null default '',
@@ -80,9 +80,9 @@ create table if not exists public.site_settings (
 insert into public.site_settings (id, company_name_zh, company_name_en, intro_zh, intro_en, whatsapp, wechat, email)
 values (
   '00000000-0000-0000-0000-000000000000',
-  '义乌忆锦饰品有限公司',
+  '义乌忆翎饰品有限公司',
   'Yiwu Yiling Accessories Co., Ltd.',
-  '义乌忆锦饰品有限公司，专注于高品质饰品的研发、生产与出口，主营手机链、脚链、手链、项链、戒指、耳环、胸针等品类，支持OEM/ODM定制，远销中东、欧美、东南亚市场。',
+  '义乌忆翎饰品有限公司，专注于高品质饰品的研发、生产与出口，主营手机链、脚链、手链、项链、戒指、耳环、胸针等品类，支持OEM/ODM定制，远销中东、欧美、东南亚市场。',
   'Yiwu Yiling Accessories Co., Ltd. specializes in the R&D, production and export of high-quality accessories including phone charms, anklets, bracelets, necklaces, rings, earrings and brooches. OEM/ODM orders are welcome.',
   '+86 19548146867',
   '+86 19548146867',

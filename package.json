@@ -2,7 +2,7 @@
   "name": "yiwu-yiling-accessories",
   "version": "0.1.0",
   "private": true,
-  "description": "义乌忆锦饰品有限公司独立站 - Yiwu Yiling Accessories Co., Ltd.",
+  "description": "义乌忆翎饰品有限公司独立站 - Yiwu Yiling Accessories Co., Ltd.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

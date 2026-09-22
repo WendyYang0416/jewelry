@@ -12,7 +12,7 @@ export const dynamic = 'force-dynamic';
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const locale: Locale = params.locale as Locale;
   const supabase = await createClient();
-  let companyZh = '义乌忆锦饰品有限公司';
+  let companyZh = '义乌忆翎饰品有限公司';
   let companyEn = 'Yiwu Yiling Accessories Co., Ltd.';
   try {
     const { data } = await supabase.from('site_settings').select('company_name_zh, company_name_en').limit(1);
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     },
     description:
       locale === 'zh'
-        ? '义乌忆锦饰品有限公司——手机链、脚链、手链、项链、戒指、耳环、胸针等饰品源头工厂，支持 OEM/ODM，全球发货。'
+        ? '义乌忆翎饰品有限公司——手机链、脚链、手链、项链、戒指、耳环、胸针等饰品源头工厂，支持 OEM/ODM，全球发货。'
         : 'Yiwu Yiling Accessories Co., Ltd. — factory-direct phone charms, anklets, bracelets, necklaces, rings, earrings and brooches. OEM/ODM welcome, worldwide shipping.',
     robots: { index: true, follow: true },
   };
@@ -56,7 +56,7 @@ export default async function LocaleLayout({
   ]);
 
   const settings: Pick<SiteSettings, 'company_name_zh' | 'company_name_en' | 'whatsapp' | 'wechat' | 'email'> = settingsRow?.[0] ?? {
-    company_name_zh: '义乌忆锦饰品有限公司',
+    company_name_zh: '义乌忆翎饰品有限公司',
     company_name_en: 'Yiwu Yiling Accessories Co., Ltd.',
     whatsapp: '+86 19548146867',
     wechat: '+86 19548146867',
