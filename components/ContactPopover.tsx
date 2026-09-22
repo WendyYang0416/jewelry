@@ -42,13 +42,17 @@ export default function ContactPopover({ whatsapp, wechat, email, labels }: Prop
         type="button"
         onMouseEnter={() => setOpen(true)}
         onClick={() => setOpen((v) => !v)}
-        className="rounded-full bg-brand-600 px-4 py-1.5 text-sm font-medium text-white hover:bg-brand-700"
+        className="flex items-center justify-center rounded-full bg-brand-600 px-2.5 py-1.5 font-medium text-white hover:bg-brand-700 sm:px-4 sm:text-sm"
+        aria-label={labels.whatsapp}
       >
-        {labels.whatsapp.split(' ')[0] === 'WhatsApp' ? 'Contact us' : labels.whatsapp}
+        <FaWhatsapp className="h-4 w-4 sm:hidden" />
+        <span className="hidden sm:inline">
+          {labels.whatsapp.split(' ')[0] === 'WhatsApp' ? 'Contact us' : labels.whatsapp}
+        </span>
       </button>
 
       {open && (
-        <div className="absolute end-0 mt-2 w-72 rounded-xl border border-brand-100 bg-white p-2 shadow-xl z-50">
+        <div className="absolute end-0 mt-2 w-[min(18rem,calc(100vw-2rem))] rounded-xl border border-brand-100 bg-white p-2 shadow-xl z-50">
           {items.map((it) => (
             <div key={it.key} className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 hover:bg-brand-50">
               <div className="flex items-center gap-2 text-sm text-gray-700">

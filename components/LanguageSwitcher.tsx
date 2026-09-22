@@ -35,10 +35,10 @@ export default function LanguageSwitcher({ current }: { current: Locale }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 rounded-full border border-brand-200 bg-white px-3 py-1.5 text-sm text-brand-700 hover:border-brand-400"
+        className="flex items-center gap-1 rounded-full border border-brand-200 bg-white px-2 py-1.5 text-sm text-brand-700 hover:border-brand-400 sm:gap-1.5 sm:px-3"
         aria-label="Language"
       >
-        <FaGlobe className="text-brand-500" />
+        <FaGlobe className="hidden text-brand-500 sm:inline" />
         <span className="text-base leading-none">{localeFlags[current]}</span>
         <span className="hidden sm:inline">{localeNames[current]}</span>
         <FaChevronDown className="h-3 w-3 text-brand-400" />

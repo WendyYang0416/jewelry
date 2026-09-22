@@ -55,19 +55,19 @@ export default function Header({ locale, settings, t }: Props) {
   );
 
   return (
-    <header dir={dir} className="border-b border-brand-100 bg-white shadow-sm backdrop-blur">
-      <div className="container flex items-center justify-between gap-4 py-3">
+    <header dir={dir} className="relative z-50 border-b border-brand-100 bg-white shadow-sm backdrop-blur">
+      <div className="container flex items-center justify-between gap-2 py-3 sm:gap-4">
         {/* Left: company name + intro */}
-        <div className="flex flex-col items-start gap-0.5">
+        <div className="flex min-w-0 flex-col items-start gap-0.5">
           <Link
             href={`/${locale}`}
-            className="text-lg font-bold leading-tight text-brand-800 hover:text-brand-600 sm:text-xl"
+            className="max-w-full truncate text-base font-bold leading-tight text-brand-800 hover:text-brand-600 sm:text-xl"
           >
             {companyName}
           </Link>
           <Link
             href={`/${locale}/about`}
-            className="text-xs text-gray-500 hover:text-brand-600"
+            className="shrink-0 text-xs text-gray-500 hover:text-brand-600"
           >
             {t.intro}
           </Link>
@@ -82,7 +82,7 @@ export default function Header({ locale, settings, t }: Props) {
         </div>
 
         {/* Right: language, contact, admin */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
           <LanguageSwitcher current={locale} />
           <ContactPopover
             whatsapp={settings.whatsapp}
@@ -98,15 +98,21 @@ export default function Header({ locale, settings, t }: Props) {
           />
           <Link
             href="/admin"
-            className="rounded-full border border-brand-300 px-3 py-1.5 text-sm text-brand-700 hover:bg-brand-50"
+            className="flex items-center justify-center rounded-full border border-brand-300 px-2.5 py-1.5 text-sm text-brand-700 hover:bg-brand-50 sm:px-3"
+            aria-label={t.admin}
           >
-            {t.admin}
+            <span className="sm:hidden">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z" strokeLinejoin="round" />
+              </svg>
+            </span>
+            <span className="hidden sm:inline">{t.admin}</span>
           </Link>
         </div>
       </div>
 
       {/* Mobile full-width search row */}
-      <div className="container pb-2">{searchForm(true)}</div>
+      <div className="container pb-2 md:hidden">{searchForm(true)}</div>
     </header>
   );
 }

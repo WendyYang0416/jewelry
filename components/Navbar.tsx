@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { isRTL } from '@/lib/i18n/config';
@@ -18,7 +19,10 @@ export default function Navbar({ locale, categories, t, hint }: Props) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({});
+  const [mounted, setMounted] = useState(false);
   const dir = isRTL[locale] ? 'rtl' : 'ltr';
+
+  useEffect(() => setMounted(true), []);
 
   const roots = categories.filter((c) => !c.parent_id);
   const childMap = new Map<string | null, Category[]>();
@@ -133,11 +137,13 @@ export default function Navbar({ locale, categories, t, hint }: Props) {
         </div>
       </div>
 
-      {/* Mobile drawer */}
-      <div
-        className={`fixed inset-0 z-50 md:hidden ${drawerOpen ? '' : 'pointer-events-none'}`}
-        aria-hidden={!drawerOpen}
-      >
+      {/* Mobile drawer (portaled to body so it layers above the z-50 header) */}
+        {mounted && createPortal(
+        <div
+          dir={dir}
+          className={`fixed inset-0 z-[60] md:hidden ${drawerOpen ? '' : 'pointer-events-none'}`}
+          aria-hidden={!drawerOpen}
+        >
         {/* Backdrop */}
         <div
           onClick={closeDrawer}
@@ -224,7 +230,9 @@ export default function Navbar({ locale, categories, t, hint }: Props) {
             {hint}
           </div>
         </div>
-      </div>
+        </div>,
+        document.body
+        )}
     </nav>
   );
 }
