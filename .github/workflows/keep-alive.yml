@@ -1,0 +1,26 @@
+# 保活监控：定时 ping 线上站点
+# 目的：站点首页 SSR 会查询 Supabase（分类/产品），
+#       产生数据库活动，防止 Supabase 免费项目因 7 天不活跃被自动暂停。
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    # 每天 UTC 03:00 和 15:00 各一次（北京时间 11:00 / 23:00）
+    - cron: '0 3 * * *'
+    - cron: '0 15 * * *'
+  workflow_dispatch: # 允许在 GitHub 页面手动触发
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping site pages (triggers Supabase queries)
+        run: |
+          for path in "/zh" "/en"; do
+            for i in 1 2 3; do
+              code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 60 "https://jewelry-ten-tan.vercel.app${path}")
+              echo "attempt $i $path -> HTTP $code"
+              if [ "$code" = "200" ]; then break; fi
+              sleep 10
+            done
+          done
